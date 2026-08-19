@@ -53,4 +53,36 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function superAdmin()
+    {
+        return $this->hasOne(SuperAdmin::class);
+    }
+
+    public function hospitalAdmin()
+    {
+        return $this->hasOne(HospitalAdmin::class);
+    }
+
+    public function receptionist()
+    {
+        return $this->hasOne(Receptionist::class);
+    }
+
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class);
+    }
+
+    public function patient()
+    {
+        return $this->hasOne(Patient::class);
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
 }
+
+

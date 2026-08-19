@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('hospitals', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
-            $table->string('email')->unique;
-            $table->string('phone')->nullable;
-            $table->string('website')->nullable;
+            $table->string('email')->unique();
+            $table->string('phone')->nullable();
+            $table->string('website')->nullable();
             $table->enum('status', ['ACTIVE', 'SUSPENDED', 'DELETED'])->default('ACTIVE');
             $table->timestamps();
         });
